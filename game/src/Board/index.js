@@ -10,7 +10,7 @@ export default function Board() {
  const [player2, setPlayer2] = useState([])
  const keyArray = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 const [toggle, setToggle] = useState(false)
-
+//const [idName, setidName] = useState("")
 
   function changeTurn(symbol, val) {
     if (symbol===true) {
@@ -40,17 +40,24 @@ const [toggle, setToggle] = useState(false)
     for (let i=0;i<winningCombos.length;i++) {
       if (player1.includes(winningCombos[i][0]) && player1.includes(winningCombos[i][1]) && player1.includes(winningCombos[i][2])) {
         alert("player 1 win")
-        setToggle(!toggle)
+        setToggle(true)
+        console.log(toggle)
+        //idName("disabledbutton")
+        return true
       } 
       else if (player2.includes(winningCombos[i][0]) && player2.includes(winningCombos[i][1]) && player2.includes(winningCombos[i][2])) {
         alert("player 2 win")
-        setToggle(!toggle)
-      }
-      else if (player1.length + player2.length === 9) {
-        alert("draw")
-        setToggle(!toggle)
-      }
+        setToggle(true)
+        console.log(toggle)
+        return true
+      } else {}
     }
+    if (player1.length + player2.length === 9){
+      alert("draw")
+      setToggle(true)
+      console.log(toggle)
+      return true
+    } else {}
   }
   
 
@@ -72,12 +79,12 @@ const [toggle, setToggle] = useState(false)
 
 <br/>
 
-    <div className="grid-container">
+    <div className="grid-container" id={toggle.toString()}>
    
    { keyArray.map((item) => {
       return (
       <div className="grid-item" key={item}>
-      <Square toggle={toggle} setToggle={setToggle} value={item} symbol={symbol} player1={player1} setPlayer1={setPlayer1} player2={player2} setPlayer2={setPlayer2} changeTurn={changeTurn} calculateWin={calculateWin}/></div>
+      <Square value={item} symbol={symbol} player1={player1} setPlayer1={setPlayer1} player2={player2} setPlayer2={setPlayer2} changeTurn={changeTurn} calculateWin={calculateWin}/></div>
       )
    })}
    </div>

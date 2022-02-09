@@ -4,7 +4,7 @@ import "./square.css"
 
 //when you click on a square , we want to do a function which toggles the classname disabled 
 //having a CSS that changes due to the symbols 
-export default function Square({symbol, changeTurn, value, player1, player2, setPlayer1, setPlayer2, calculateWin, toggle, setToggle}) {
+export default function Square({symbol, changeTurn, value, calculateWin}) {
 
     // symbol - whose turn it is
     // true = cross
@@ -19,14 +19,13 @@ export default function Square({symbol, changeTurn, value, player1, player2, set
         let val = toggleXO()
         changeTurn(symbol, val)
         calculateWin(symbol, val)
-
     }
+ 
 
     function toggleXO(){
         if (symbol === true){
             setState("cross")
             setDisable(!disable)
-            //console.log("a p1", player1, value)
         } else if (symbol === false) {
             setState("nought")
             setDisable(!disable)

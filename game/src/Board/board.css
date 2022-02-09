@@ -16,3 +16,12 @@
   display: flex;
   margin-left: 900px;
 }
+
+#true {
+  pointer-events: none;
+  opacity: 0.4;
+}
+.true {
+  pointer-events: none;
+  opacity: 0.4;
+}

@@ -1,20 +1,22 @@
-.empty{
-    width: 100px;
-    height: 100px;
-    background-color: pink;
-    border: 1px solid purple;
-
+.empty {
+  width: 100px;
+  height: 100px;
+  background-color: pink;
+  border: 1px solid purple;
 }
-.cross{
-    width: 100px;
-    height: 100px;
-    background-color: yellow;
-    border: 1px solid purple;
-
+.cross {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  border: 1px solid purple;
 }
-.nought{
-    width: 100px;
-    height: 100px;
-    background-color: green;
-    border: 1px solid purple;
+.nought {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  border: 1px solid purple;
+}
+.true {
+  pointer-events: none;
+  opacity: 0.4;
 }
